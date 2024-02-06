@@ -1,0 +1,27 @@
+task main()
+{
+
+nxtDisplayString(" ____________");
+nxtDisplayString("|            |");
+nxtDisplayString("|            |");
+nxtDisplayString("|   square   |");
+nxtDisplayString("|            |");
+nxtDisplayString("|            |");
+nxtDisplayString("|____________|");
+
+nMotorEncoder[motorB] = 0;               
+nMotorEncoder[motorC] = 0;               
+nMotorEncoderTarget[motorB] = 360;       
+nMotorEncoderTarget[motorC] = 360;       
+motor[motorB] = 75;                      
+motor[motorC] = 75;                      
+ 
+while(nMotorRunState[motorB] != runStateIdle && nMotorRunState[motorC] != runStateIdle)  
+{
+ PlaySoundFile("squares-squares-squares.rso");
+ wait10Msec(1000);
+}
+motor[motorB] = 0;                      
+motor[motorC] = 0;         
+}
+
